@@ -31,9 +31,10 @@ RUN chmod +x $CATALINA_HOME/scripts/*.sh
 
 WORKDIR /opt/tomcat
 
-EXPOSE 8080
 EXPOSE 8009
+EXPOSE 8080
 
+# download war file into webapps folder
 RUN curl https://raw.githubusercontent.com/VeerMuchandi/ps/master/deployments/ROOT.war -o $CATALINA_HOME/webapps/ps.war
 
 USER tomcat
